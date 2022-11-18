@@ -1,5 +1,6 @@
 import 'package:first_app/screen/learn_flutter_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,7 +9,33 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Flutter Appbar"),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
+          child: SvgPicture.asset(
+            'assets/svg/menu_icon.svg',
+          ),
+        ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 10, top: 10, bottom: 10),
+            child: SvgPicture.asset(
+              'assets/svg/notification_icon.svg',
+              height: 30,
+            ),
+          ),
+        ],
+        elevation: 0,
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.brown,
+        title: const Center(
+            child: Text(
+          "Dashboard",
+          style: TextStyle(
+            color: Colors.blue,
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+          ),
+        )),
       ),
       body: Center(
         child: ElevatedButton(
