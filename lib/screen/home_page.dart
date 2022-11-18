@@ -9,18 +9,19 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 10, top: 10, bottom: 10),
-          child: SvgPicture.asset(
+        leading: IconButton(
+          onPressed: () {},
+          icon: SvgPicture.asset(
             'assets/svg/menu_icon.svg',
+            height: 30,
           ),
         ),
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 10, top: 10, bottom: 10),
-            child: SvgPicture.asset(
+          IconButton(
+            onPressed: () {},
+            icon: SvgPicture.asset(
               'assets/svg/notification_icon.svg',
-              height: 30,
+              height: 25,
             ),
           ),
         ],
