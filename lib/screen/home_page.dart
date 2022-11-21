@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
               currentAccountPicture: CircleAvatar(
                 child: ClipOval(
                   child: Image.network(
-                    'https://www.sarcasm.co/wp-content/uploads/2019/06/stevejobs.jpg',
+                    'https://img.seadn.io/files/bbefba536cb4156606a4e01953bfecab.png?fit=max&w=1000',
                     width: 90,
                     height: 90,
                     fit: BoxFit.cover,
@@ -70,14 +70,65 @@ class HomePage extends StatelessWidget {
             ),
             ListTile(
               leading: SvgPicture.asset(
-                'assets/svg/favorite_ico.svg',
-                height: 30,
+                'assets/svg/favarite.svg',
+                height: 25,
                 width: 30,
                 fit: BoxFit.cover,
               ),
               title: const Text('Favorite'),
               onTap: (() => debugPrint('fav')),
-            )
+            ),
+            ListTile(
+              leading: SvgPicture.asset(
+                'assets/svg/friend_icon.svg',
+                height: 25,
+                width: 30,
+                fit: BoxFit.cover,
+              ),
+              title: const Text('Friend'),
+              onTap: (() => debugPrint('fri')),
+            ),
+            ListTile(
+              leading: SvgPicture.asset(
+                'assets/svg/share_icon.svg',
+                height: 25,
+                width: 30,
+                fit: BoxFit.cover,
+              ),
+              title: const Text('Share'),
+              onTap: (() => debugPrint('share')),
+            ),
+            ListTile(
+              leading: SvgPicture.asset(
+                'assets/svg/request_icon.svg',
+                height: 28,
+                width: 30,
+                fit: BoxFit.cover,
+              ),
+              title: const Text('Exit'),
+              onTap: (() => debugPrint('exit')),
+            ),
+            const Divider(),
+            ListTile(
+              leading: SvgPicture.asset(
+                'assets/svg/policy_icon.svg',
+                height: 25,
+                width: 30,
+                fit: BoxFit.cover,
+              ),
+              title: const Text('Policy'),
+              onTap: (() => debugPrint('policy')),
+            ),
+            ListTile(
+              leading: SvgPicture.asset(
+                'assets/svg/exit_icon.svg',
+                height: 25,
+                width: 30,
+                fit: BoxFit.cover,
+              ),
+              title: const Text('Exit'),
+              onTap: (() => debugPrint('exit')),
+            ),
           ]),
         ),
         body: Center(
