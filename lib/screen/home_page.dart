@@ -7,47 +7,90 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: SvgPicture.asset(
-            'assets/svg/menu_icon.svg',
-            height: 30,
-          ),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: SvgPicture.asset(
-              'assets/svg/notification_icon.svg',
-              height: 25,
-            ),
-          ),
-        ],
-        elevation: 0,
-        foregroundColor: Colors.black,
-        backgroundColor: Colors.brown,
-        title: const Center(
-            child: Text(
-          "Dashboard",
-          style: TextStyle(
-            color: Colors.blue,
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-          ),
-        )),
-      ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.of(context).push(
-              MaterialPageRoute(builder: (BuildContext context) {
-                return const LearnFlutterPage();
-              }),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          leading: Builder(builder: (BuildContext context) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+              icon: SvgPicture.asset(
+                'assets/svg/menu_icon.svg',
+                height: 30,
+              ),
             );
-          },
-          child: const Text("Learn Flutter"),
+          }),
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: SvgPicture.asset(
+                'assets/svg/notification_icon.svg',
+                height: 25,
+              ),
+            ),
+          ],
+          elevation: 0,
+          //foregroundColor: Colors.black,
+          backgroundColor: Colors.transparent,
+          title: const Center(
+              child: Text(
+            "Dashboard",
+            style: TextStyle(
+              color: Colors.blue,
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+            ),
+          )),
+        ),
+        drawer: Drawer(
+          child: ListView(children: [
+            UserAccountsDrawerHeader(
+              accountName: const Text("Diya"),
+              accountEmail: const Text("diya.dev@flutter.com"),
+              currentAccountPicture: CircleAvatar(
+                child: ClipOval(
+                  child: Image.network(
+                    'https://www.sarcasm.co/wp-content/uploads/2019/06/stevejobs.jpg',
+                    width: 90,
+                    height: 90,
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: NetworkImage(
+                    'https://media.istockphoto.com/id/1185747322/photo/blue-mesh-gradient-blurred-motion-abstract-background.jpg?s=612x612&w=0&k=20&c=5S8NBjBQCjL_5zMenfcRrx5X9m6AqJLwYbdTprLJPiA=',
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: SvgPicture.asset(
+                'assets/svg/favorite_ico.svg',
+                height: 30,
+                width: 30,
+                fit: BoxFit.cover,
+              ),
+              title: const Text('Favorite'),
+              onTap: (() => debugPrint('fav')),
+            )
+          ]),
+        ),
+        body: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return const LearnFlutterPage();
+                }),
+              );
+            },
+            child: const Text("Learn Flutter"),
+          ),
         ),
       ),
     );
