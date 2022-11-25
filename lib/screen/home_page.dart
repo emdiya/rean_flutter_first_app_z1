@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
               tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
               icon: SvgPicture.asset(
                 'assets/svg/menu_icon.svg',
-                height: 30,
+                height: 24,
               ),
             );
           }),
@@ -27,7 +27,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {},
               icon: SvgPicture.asset(
                 'assets/svg/notification_icon.svg',
-                height: 25,
+                height: 24,
               ),
             ),
           ],
@@ -76,8 +76,8 @@ class HomePage extends StatelessWidget {
                   ListTile(
                     leading: SvgPicture.asset(
                       'assets/svg/favarite.svg',
-                      height: 25,
-                      width: 30,
+                      height: 24,
+                      width: 24,
                       fit: BoxFit.cover,
                     ),
                     title: const Text('Favorite'),
@@ -86,8 +86,8 @@ class HomePage extends StatelessWidget {
                   ListTile(
                     leading: SvgPicture.asset(
                       'assets/svg/friend_icon.svg',
-                      height: 25,
-                      width: 30,
+                      height: 24,
+                      width: 24,
                       fit: BoxFit.cover,
                     ),
                     title: const Text('Friend'),
@@ -96,8 +96,8 @@ class HomePage extends StatelessWidget {
                   ListTile(
                     leading: SvgPicture.asset(
                       'assets/svg/share_icon.svg',
-                      height: 25,
-                      width: 30,
+                      height: 24,
+                      width: 24,
                       fit: BoxFit.cover,
                     ),
                     title: const Text('Share'),
@@ -107,17 +107,17 @@ class HomePage extends StatelessWidget {
                     leading: SvgPicture.asset(
                       'assets/svg/request_icon.svg',
                       height: 28,
-                      width: 30,
+                      width: 24,
                       fit: BoxFit.cover,
                     ),
-                    title: const Text('Exit'),
-                    onTap: (() => debugPrint('exit')),
+                    title: const Text('Report'),
+                    onTap: (() => debugPrint('report')),
                   ),
                   ListTile(
                     leading: SvgPicture.asset(
                       'assets/svg/policy_icon.svg',
-                      height: 25,
-                      width: 30,
+                      height: 24,
+                      width: 24,
                       fit: BoxFit.cover,
                     ),
                     title: const Text('Policy'),
@@ -125,35 +125,54 @@ class HomePage extends StatelessWidget {
                   ),
                   ListTile(
                     leading: SvgPicture.asset(
-                      'assets/svg/exit_icon.svg',
-                      height: 25,
+                      'assets/svg/ativities.svg',
+                      height: 24,
+                      width: 24,
+                      fit: BoxFit.cover,
+                    ),
+                    title: const Text('Activity'),
+                    onTap: (() => debugPrint('activity')),
+                  ),
+                  const SizedBox(
+                    height: 40,
+                  ),
+                  FloatingActionButton(
+                    elevation: 0.0,
+                    backgroundColor: Colors.transparent,
+                    onPressed: () {
+                      Navigator.of(context).pop(
+                        MaterialPageRoute(builder: (BuildContext context) {
+                          return const HomePage();
+                        }),
+                      );
+                    },
+                    child: SvgPicture.asset(
+                      'assets/svg/quite_icon.svg',
+                      height: 30,
                       width: 30,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  const Divider(),
+                  const SizedBox(height: 15),
+                  ListTile(
+                    leading: SvgPicture.asset(
+                      'assets/svg/feedback_icon.svg',
+                      height: 24,
+                      width: 24,
+                      fit: BoxFit.cover,
+                    ),
+                    title: const Text('Help Feedback'),
+                    onTap: (() => debugPrint('exit')),
+                  ),
+                  ListTile(
+                    leading: SvgPicture.asset(
+                      'assets/svg/exit_icon.svg',
+                      height: 24,
+                      width: 24,
                       fit: BoxFit.cover,
                     ),
                     title: const Text('Exit'),
-                    onTap: (() => debugPrint('exit')),
-                  ),
-                  const SizedBox(height: 100),
-                  const Divider(),
-                  const SizedBox(height: 10),
-                  ListTile(
-                    leading: SvgPicture.asset(
-                      'assets/svg/exit_icon.svg',
-                      height: 25,
-                      width: 30,
-                      fit: BoxFit.cover,
-                    ),
-                    title: const Text('Help Feedback'),
-                    onTap: (() => debugPrint('exit')),
-                  ),
-                  ListTile(
-                    leading: SvgPicture.asset(
-                      'assets/svg/exit_icon.svg',
-                      height: 25,
-                      width: 30,
-                      fit: BoxFit.cover,
-                    ),
-                    title: const Text('Help Feedback'),
                     onTap: (() => debugPrint('exit')),
                   ),
                 ],

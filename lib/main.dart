@@ -71,7 +71,7 @@ class _RootPageState extends State<RootPage> {
             child: NavigationDestination(
               icon: SvgPicture.asset(
                 'assets/svg/home_icon.svg',
-                height: 25,
+                height: 24,
               ),
               label: '',
             ),
@@ -81,7 +81,7 @@ class _RootPageState extends State<RootPage> {
             child: NavigationDestination(
                 icon: SvgPicture.asset(
                   'assets/svg/search_icon.svg',
-                  height: 25,
+                  height: 24,
                 ),
                 label: ''),
           ),
@@ -90,7 +90,7 @@ class _RootPageState extends State<RootPage> {
             child: NavigationDestination(
                 icon: SvgPicture.asset(
                   'assets/svg/scan_qr.svg',
-                  height: 25,
+                  height: 24,
                 ),
                 label: ''),
           ),
@@ -99,7 +99,7 @@ class _RootPageState extends State<RootPage> {
             child: NavigationDestination(
                 icon: SvgPicture.asset(
                   'assets/svg/user_icon.svg',
-                  height: 25,
+                  height: 24,
                 ),
                 label: ''),
           ),
@@ -108,7 +108,7 @@ class _RootPageState extends State<RootPage> {
             child: NavigationDestination(
                 icon: SvgPicture.asset(
                   'assets/svg/setting_icon.svg',
-                  height: 25,
+                  height: 24,
                 ),
                 label: ''),
           ),
