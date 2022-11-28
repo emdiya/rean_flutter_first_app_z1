@@ -1,4 +1,6 @@
-import 'package:first_app/screen/learn_flutter_page.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:first_app/data/card_data.dart';
+import 'package:first_app/widgets/bank_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -180,16 +182,72 @@ class HomePage extends StatelessWidget {
             ),
           ]),
         ),
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (BuildContext context) {
-                  return const LearnFlutterPage();
-                }),
-              );
-            },
-            child: const Text("Learn Flutter"),
+        body: Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: Column(
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  const Text(
+                    'Card',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                  Row(
+                    children: [
+                      const Text(
+                        'Add',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      IconButton(
+                          onPressed: () {},
+                          icon: const Icon(
+                            Icons.add,
+                            size: 20,
+                          ))
+                    ],
+                  ),
+                ],
+              ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     Navigator.of(context).push(
+              //       MaterialPageRoute(builder: (BuildContext context) {
+              //         return const LearnFlutterPage();
+              //       }),
+              //     );
+              //   },
+              //   child: const Text("Learn Flutter"),
+              // ),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     Navigator.of(context).push(
+              //       MaterialPageRoute(builder: (BuildContext context) {
+              //         return const TestAPI();
+              //       }),
+              //     );
+              //   },
+              //   child: const Text("Test API"),
+              // ),
+              CarouselSlider.builder(
+                options: CarouselOptions(
+                  height: 180,
+                  aspectRatio: 16 / 9,
+                  viewportFraction: 0.8,
+                  initialPage: 1,
+                  autoPlay: true,
+                  enlargeCenterPage: true,
+                ),
+                itemCount: cardMockData.length,
+                itemBuilder: (_, index, __) => BankCard(
+                  cardDetail: cardMockData[index],
+                ),
+              ),
+            ],
           ),
         ),
       ),

@@ -62,6 +62,7 @@ class _RootPageState extends State<RootPage> {
       //   ),
       // ),
       bottomNavigationBar: NavigationBar(
+        surfaceTintColor: Colors.amberAccent,
         backgroundColor: Colors.white,
         height: 55,
         elevation: 0,
