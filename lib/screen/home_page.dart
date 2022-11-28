@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           title: const Center(
               child: Text(
-            "Dashboard",
+            "DevZone",
             style: TextStyle(
               color: Colors.blue,
               fontSize: 22,
@@ -235,10 +235,10 @@ class HomePage extends StatelessWidget {
               // ),
               CarouselSlider.builder(
                 options: CarouselOptions(
-                  height: 180,
+                  height: 210,
                   aspectRatio: 16 / 9,
-                  viewportFraction: 0.8,
-                  initialPage: 1,
+                  viewportFraction: 0.75,
+                  //initialPage: 1,
                   autoPlay: true,
                   enlargeCenterPage: true,
                 ),
