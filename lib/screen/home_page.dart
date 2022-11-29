@@ -1,12 +1,19 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:first_app/data/card_data.dart';
+import 'package:first_app/data/constant.dart';
 import 'package:first_app/widgets/bank_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int cardIndex = 1;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -38,7 +45,7 @@ class HomePage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           title: const Center(
               child: Text(
-            "DevZone",
+            "TestApp",
             style: TextStyle(
               color: Colors.blue,
               fontSize: 22,
@@ -190,16 +197,16 @@ class HomePage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   const Text(
-                    'Card',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    'Cards',
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   Row(
                     children: [
                       const Text(
-                        'Add',
+                        'Add New',
                         style: TextStyle(
                           color: Colors.grey,
-                          fontSize: 18,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -233,20 +240,52 @@ class HomePage extends StatelessWidget {
               //   },
               //   child: const Text("Test API"),
               // ),
-              CarouselSlider.builder(
-                options: CarouselOptions(
-                  height: 210,
-                  aspectRatio: 16 / 9,
-                  viewportFraction: 0.75,
-                  //initialPage: 1,
-                  autoPlay: true,
-                  enlargeCenterPage: true,
-                ),
-                itemCount: cardMockData.length,
-                itemBuilder: (_, index, __) => BankCard(
-                  cardDetail: cardMockData[index],
-                ),
-              ),
+              Stack(
+                children: [
+                  CarouselSlider.builder(
+                    options: CarouselOptions(
+                      height: 210,
+                      aspectRatio: 16 / 9,
+                      viewportFraction: 0.75,
+                      initialPage: 1,
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                    ),
+                    itemCount: cardMockData.length,
+                    itemBuilder: (_, index, __) => BankCard(
+                      cardDetail: cardMockData[index],
+                    ),
+                  ),
+                  Positioned(
+                    bottom: kSpacingUnit * 2.5,
+                    left: 0,
+                    right: 0,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: cardMockData
+                          .map(
+                            (card) => Container(
+                              height: 10,
+                              width: 10,
+                              margin: const EdgeInsets.symmetric(
+                                  horizontal: kSpacingUnit * 0.3),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: cardMockData[cardIndex].numner ==
+                                          card.numner
+                                      ? kPrimaryColor
+                                      : Colors.transparent,
+                                  border: Border.all(
+                                    color: kPrimaryColor,
+                                    width: 1.5,
+                                  )),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),
