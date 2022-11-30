@@ -59,7 +59,8 @@ class BankCard extends StatelessWidget {
             Text(
               cardDetail.numner!,
               style: const TextStyle(
-                fontFamily: 'TTNorms',
+                fontFamily: 'Signika',
+                fontWeight: FontWeight.bold,
                 color: Colors.white,
                 shadows: [
                   BoxShadow(

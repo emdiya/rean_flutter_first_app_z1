@@ -177,7 +177,10 @@ class _HomePageState extends State<HomePage> {
                 children: [
                   const Text(
                     'Tansactions',
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   IconButton(
                     onPressed: () {},
