@@ -33,8 +33,8 @@ class BankCard extends StatelessWidget {
             ),
           ]),
       child: Padding(
-        padding: const EdgeInsets.all(kSpacingUnit * 0.3)
-            .copyWith(right: 15, left: 15, bottom: 10),
+        padding: const EdgeInsets.all(kSpacingUnit * 0.2)
+            .copyWith(right: 15, left: 10, bottom: 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,6 +59,7 @@ class BankCard extends StatelessWidget {
             Text(
               cardDetail.numner!,
               style: const TextStyle(
+                fontFamily: 'TTNorms',
                 color: Colors.white,
                 shadows: [
                   BoxShadow(
@@ -110,15 +111,33 @@ class BankCardField extends StatelessWidget {
         children: [
           TextSpan(
             text: '$label\n',
-            style: const TextStyle(color: Colors.white).copyWith(
-              fontSize: 12,
+            style: const TextStyle(
+              color: Colors.white,
+              shadows: [
+                BoxShadow(
+                  color: Colors.white,
+                  spreadRadius: 2,
+                  blurRadius: kSpacingUnit * 2,
+                  offset: Offset(2, kSpacingUnit * 0.2), // cha
+                )
+              ],
+            ).copyWith(
+              fontSize: 10,
             ),
           ),
           TextSpan(
             text: value,
             style: const TextStyle(color: Colors.white).copyWith(
               height: 1.5,
-              fontSize: 12,
+              fontSize: 14,
+              shadows: [
+                const BoxShadow(
+                  color: Colors.white,
+                  spreadRadius: 2,
+                  blurRadius: kSpacingUnit * 2,
+                  offset: Offset(2, kSpacingUnit * 0.2), // cha
+                )
+              ],
             ),
           ),
         ],

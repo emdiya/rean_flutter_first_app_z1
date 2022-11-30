@@ -5,11 +5,11 @@ class Transaction {
   final String? date;
   final double? value;
 
-  Transaction(
+  Transaction({
     this.logo,
     this.title,
     this.description,
     this.date,
     this.value,
-  );
+  });
 }
