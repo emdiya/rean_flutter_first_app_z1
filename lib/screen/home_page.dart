@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
                       _scrollIndex = index;
                       setState(() {});
                     },
-                    height: 210,
+                    height: 220,
                     aspectRatio: 16 / 9,
                     viewportFraction: 0.75,
                     initialPage: 1,
