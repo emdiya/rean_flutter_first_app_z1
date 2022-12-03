@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'screen/home_page.dart';
+import 'screen/search_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +42,7 @@ class _RootPageState extends State<RootPage> {
 
   final pages = [
     const HomePage(),
-    const ScanQR(),
+    const SearhPage(),
     const ScanQR(),
     const ProfileInfo(),
     const About(),
@@ -50,18 +51,6 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: pages.elementAt(currrentPage),
-      // floatingActionButton: FloatingActionButton(
-      //   backgroundColor: Colors.lightBlue,
-      //   elevation: 1,
-      //   onPressed: () {
-      //     debugPrint("Test FLoatingActionButton");
-      //   },
-      //   child: SvgPicture.asset(
-      //     'assets/svg/add_icon.svg',
-      //     height: 25,
-      //     width: 25,
-      //   ),
-      // ),
       bottomNavigationBar: NavigationBar(
         surfaceTintColor: Colors.amberAccent,
         backgroundColor: Colors.white,

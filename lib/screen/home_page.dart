@@ -118,6 +118,7 @@ class _HomePageState extends State<HomePage> {
             //   },
             //   child: const Text("Test API"),
             // ),
+
             Stack(
               children: [
                 CarouselSlider.builder(
@@ -126,7 +127,7 @@ class _HomePageState extends State<HomePage> {
                       _scrollIndex = index;
                       setState(() {});
                     },
-                    height: 220,
+                    height: 200,
                     aspectRatio: 16 / 9,
                     viewportFraction: 0.75,
                     initialPage: 1,
